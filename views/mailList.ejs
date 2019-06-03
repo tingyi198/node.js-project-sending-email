@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        傳送表單內容
+    </title>
+
+    <style type="text/css">
+        table
+        {
+            border: 1px solid #888;
+            border-collapse: collapse;
+        }
+        td
+        {
+            border: 1px solid #888;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><a href="/mailList/remove?id=qwert"></a></td>
+            <td>姓名</td>
+            <td>email</td>
+            <td>標題</td>
+            <td>內容</td>
+        </tr>
+        <% for(id in mail) { %>
+            <tr>
+                <td><a href="/mailList/remove?id=<%= id %>">刪除</a></td>
+                <td><%= mail[id].name %></td>
+                <td><%= mail[id].email %></td>
+                <td><%= mail[id].title %></td>
+                <td><%= mail[id].description %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+
+</html>
